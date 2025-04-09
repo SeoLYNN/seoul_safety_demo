@@ -9,7 +9,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-		<title>서울시 민방위 Ver.0.1</title>
+		<title>서울시 민방위 Ver.0.2</title>
 
 		<link rel="stylesheet" href="<c:url value='/css/index.css'/>" />
 
@@ -52,8 +52,6 @@
 		<!--지도-->
 		<div id="map" class="absolute top-0 left-0 h-full w-full bg-slate-300" style="z-index: 0"></div>
 
-
-
 		<!--거리 설정 버튼-->
 		<div class="radio-inputs select-none absolute top-4 left-4 flex items-center gap-1 bg-white px-2 py-1.5 md:py-2 rounded-full shadow-lg shadow-black/30 text-slate-700 text-xs md:text-sm">
 			<label class="cursor-pointer">
@@ -82,6 +80,15 @@
 				<span class="transition-effect peer-checked:bg-cyan-600 peer-checked:text-white bg-white px-2 md:px-3 py-1 rounded-full whitespace-nowrap flex items-center gap-0.5">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-geo-alt-fill w-3" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path></svg>
 					전체
+				</span>
+			</label>
+		</div>
+
+		<div class="radio-inputs select-none absolute top-16 left-4 flex items-center gap-1 bg-white px-2 py-1.5 md:py-2 rounded-full shadow-lg shadow-black/30 text-slate-700 text-xs md:text-sm">
+			<label class="cursor-pointer">
+				<input type="text" name="versionText" class="sr-only peer" />
+				<span class="transition-effect peer-checked:bg-cyan-600 peer-checked:text-white bg-white px-2 md:px-3 py-1 rounded-full whitespace-nowrap flex items-center gap-0.5">
+					Ver 0.2
 				</span>
 			</label>
 		</div>
@@ -116,18 +123,6 @@
 						<tbody id="shelterInfo">
 						</tbody>
 					</table>
-
-					<!--길찾기 버튼-->
-					<div class="w-full px-2">
-						<button type="button" onclick="handleNaviModal(true)" class="w-full bg-[#3C84AB] text-white h-9 text-sm md:text-base font-medium rounded-md flex items-center justify-center gap-x-2" tabindex="0">
-							길찾기
-							<span class="bg-white/30 text-white w-5 h-5 flex items-center justify-center rounded-full">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-3 h-3">
-								<path stroke-linecap="round" stroke-linejoin="round" d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3"></path>
-							</svg>
-						</span>
-						</button>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -178,7 +173,8 @@
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=46955616a400c19c50b990fec29435ad"></script>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=46955616a400c19c50b990fec29435ad&libraries=services"></script>
 
-		<script type="text/javascript" src="<c:url value='/js/main.js'/>"></script>
+<%--		<script type="text/javascript" src="<c:url value='/js/main.js'/>"></script>--%>
+		<script type="text/javascript" src="<c:url value='/js/main_v2.js'/>"></script>
 
 	</body>
 </html>

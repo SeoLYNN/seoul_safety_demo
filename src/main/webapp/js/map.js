@@ -45,6 +45,7 @@ const viewBottomSheet = (boolean) => {
     }
 }
 
+
 $(document).ready(function(){
     // let selectedMarker; // 선택된 마커 id
 

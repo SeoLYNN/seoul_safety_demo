@@ -9,7 +9,7 @@ public class MainController {
     @RequestMapping(value="/Main.do")
     public String mainPage () throws Exception {
         System.out.println("====== MAIN ======");
-        return "Main";
+        return "Main_v2";
     }
 
 }

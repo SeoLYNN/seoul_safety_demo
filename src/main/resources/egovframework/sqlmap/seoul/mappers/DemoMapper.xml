@@ -22,6 +22,7 @@
                                         , FCLT_PSTN
                                         , ACTC_NOPE
                                         , GEOM
+                                        , ROUND(ST_Distance(geom::geography, ST_SetSRID(ST_MakePoint('126.97820484638216'::float8, '37.56657020752845'::float8), 4326)::geography)) AS DISTANCE
                                 FROM gis.SEOUL_EVACU_FACY SEF
                                 WHERE 1=1
                                   <if test='dist != "all"'>
@@ -31,6 +32,7 @@
                                                 , #{dist}::NUMERIC
                                         )
                                   </if>
+                                ORDER BY DISTANCE
                         ) G
                 ) F
         ) FC
