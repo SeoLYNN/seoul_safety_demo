@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>광역교통 데이터 플랫폼</title>
+        <link rel="stylesheet" href="./assets/daisyui.css" />
+        <link rel="stylesheet" href="./assets/common.css" />
+        <script src="./assets/tailwind.js"></script>
+    </head>
+    <body data-theme="light" class="flex flex-col min-h-screen">
+        <header class="sticky top-0 z-20 flex-none bg-base-100 drop-shadow">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <a href="./index.html" class="text-xl normal-case btn btn-ghost no-animation">
+                        <img src="./assets/images/logo.svg" alt="logo" loading="lazy" class="w-44" />
+                    </a>
+                </div>
+                <div class="hidden navbar-center lg:flex">
+                    <ul class="px-1 menu menu-horizontal">
+                        <li><a href="./index.html">2차 기본계획</a></li>
+                        <li><a href="./index.html">4차 기본계획</a></li>
+                        <li><a href="./index.html">광역교통시설 및 서비스</a></li>
+                        <li><a href="./index.html">광역통행</a></li>
+                        <li><a href="./index.html">사회경제지표</a></li>
+                        <li><a href="./map.html">광역교통지도</a></li>
+                        <li><a href="./info.html" class="active">알림마당</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <button onclick="logOutModal.showModal()" class="btn btn-primary btn-sm">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex flex-1">
+            <section class="w-60 bg-base-200">
+                <h2 class="sticky top-0 z-10 py-4 font-black text-center bg-base-200 bg-opacity-90">알림마당</h2>
+                <ul class="mx-3 menu bg-base-100">
+                    <li><a href="./info.html">공지사항</a></li>
+                    <li><a href="./info2.html">정책자료</a></li>
+                    <li><a href="./info3.html" class="active">시스템 관련 공지사항</a></li>
+                </ul>
+            </section>
+            <section class="relative flex-1 p-12 text-center">
+                <h2 class="mt-12 text-3xl font-black">시스템 관련 공지사항</h2>
+                <div class="flex justify-end mt-8 mb-6">
+                    <form method="get" class="join">
+                        <div>
+                            <div>
+                                <input class="input join-item" placeholder="검색어를 입력 해주세요" />
+                            </div>
+                        </div>
+                        <select class="select join-item">
+                            <option>제목</option>
+                            <option>내용</option>
+                            <option>제목 + 내용</option>
+                            <option>작성자</option>
+                        </select>
+                        <div class="indicator">
+                            <button class="btn join-item">검색</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="table text-center">
+                        <colgroup>
+                            <col style="width: 5%" />
+                            <col style="width: 55%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                        </colgroup>
+                        <thead>
+                            <tr class="bg-base-200">
+                                <th>순번</th>
+                                <th class="text-left">제목</th>
+                                <th>작성자</th>
+                                <th>등록일</th>
+                                <th>조회수</th>
+                                <th>첨부파일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>1</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>2</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>3</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>4</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>5</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>6</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>7</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>8</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>9</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="cursor-pointer hover" onclick="location.href='read.html'">
+                                <th>10</th>
+                                <td class="text-left">화성동탄2 광역교통개선대책 추진현황</td>
+                                <td>작성자</td>
+                                <td>2022.09.08</td>
+                                <td>459</td>
+                                <td
+                                    onclick="event.stopPropagation();
+                                    window.open('./assets/국가기간교통망계획제2차수정계획(전문).pdf', 'new', 'width=1000, height=800, top=100, left=100, scrollbars=yes, resizable=yes')
+                                "
+                                >
+                                    <div class="flex justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-8 join">
+                    <button class="join-item btn btn-sm">«</button>
+                    <button class="join-item btn btn-sm btn-active">1</button>
+                    <button class="join-item btn btn-sm">2</button>
+                    <button class="join-item btn btn-sm">3</button>
+                    <button class="join-item btn btn-sm">4</button>
+                    <button class="join-item btn btn-sm">5</button>
+                    <button class="join-item btn btn-sm">6</button>
+                    <button class="join-item btn btn-sm">7</button>
+                    <button class="join-item btn btn-sm">8</button>
+                    <button class="join-item btn btn-sm">9</button>
+                    <button class="join-item btn btn-sm">»</button>
+                </div>
+            </section>
+        </main>
+
+        <ul id="modalWrap"></ul>
+
+        <script type="text/javascript" src="./assets/js/common_ui.js"></script>
+    </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>광역교통 데이터 플랫폼</title>
+        <link rel="stylesheet" href="./assets/daisyui.css" />
+        <link rel="stylesheet" href="./assets/common.css" />
+        <script src="./assets/tailwind.js"></script>
+    </head>
+    <body data-theme="light" class="flex flex-col min-h-screen">
+        <header class="sticky top-0 z-20 flex-none bg-base-100 drop-shadow">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <a href="./index.html" class="text-xl normal-case btn btn-ghost no-animation">
+                        <img src="./assets/images/logo.svg" alt="logo" loading="lazy" class="w-44" />
+                    </a>
+                </div>
+                <div class="hidden navbar-center lg:flex">
+                    <ul class="px-1 menu menu-horizontal">
+                        <li><a href="./index.html" class="active">2차 기본계획</a></li>
+                        <li><a href="./index.html">4차 기본계획</a></li>
+                        <li><a href="./index.html">광역교통시설 및 서비스</a></li>
+                        <li><a href="./index.html">광역통행</a></li>
+                        <li><a href="./index.html">사회경제지표</a></li>
+                        <li><a href="./map.html">광역교통지도</a></li>
+                        <li><a href="./info.html">알림마당</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <button onclick="logOutModal.showModal()" class="btn btn-primary btn-sm">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex flex-1">
+            <section class="w-60 bg-base-200">
+                <h2 class="sticky top-0 z-10 py-4 font-black text-center bg-base-200 bg-opacity-90">2차 기본계획</h2>
+                <ul class="mx-3 menu bg-base-100">
+                    <li><a href="./index.html" class="active">광역철도망 확충현황</a></li>
+                    <li><a href="./index.html">광역버스 입석률</a></li>
+                    <li><a href="./index.html">광역버스 환승시간</a></li>
+                </ul>
+            </section>
+            <!-- <section class="grid flex-1 grid-cols-2 gap-8 p-6">
+                <div class="flex flex-col gap-4 bg-red-500 opacity-0 pointer-events-none">
+                    <h2 class="flex-none card-title">지도</h2>
+                    <div class="flex-1 p-4 bg-red-900 shadow-lg rounded-box">2</div>
+                </div>
+                <div class="flex flex-col row-span-2 gap-4 bg-blue-500">
+                    <h2 class="flex-none card-title">지도</h2>
+                    <div class="flex-1 p-4 bg-blue-900 shadow-lg rounded-box">2</div>
+                </div>
+                <div class="flex flex-col gap-4 bg-green-500">
+                    <h2 class="flex-none card-title">연장길이 현황</h2>
+                    <div class="flex-1 p-4 bg-green-900 shadow-lg rounded-box">2</div>
+                </div>
+            </section> -->
+
+            <!-- <section class="grid flex-1 grid-cols-2 gap-8 p-6">
+                <div class="flex flex-col gap-4 bg-red-500 opacity-0 pointer-events-none">
+                    <h2 class="flex-none card-title">지도</h2>
+                    <div class="flex-1 p-4 bg-red-900 shadow-lg">2</div>
+                </div>
+                <div class="flex flex-col gap-4 bg-blue-500">
+                    <h2 class="flex-none card-title">지도</h2>
+                    <div class="flex-1 p-4 bg-blue-900 shadow-lg rounded-box">2</div>
+                </div>
+                <div class="flex flex-col gap-4 bg-green-500 opacity-0 pointer-events-none">
+                    <h2 class="flex-none card-title">연장길이 현황</h2>
+                    <div class="flex-1 p-4 bg-green-900 shadow-lg rounded-box">2</div>
+                </div>
+                <div class="flex flex-col gap-4 bg-green-500">
+                    <h2 class="flex-none card-title">연장길이 현황</h2>
+                    <div class="flex-1 p-4 bg-green-900 shadow-lg rounded-box">2</div>
+                </div>
+            </section> -->
+
+            <section class="grid flex-1 grid-cols-2 gap-8 p-6">
+                <div class="flex flex-col row-span-2 gap-4 bg-red-500">
+                    <h2 class="flex-none card-title">지도</h2>
+                    <div class="flex-1 p-4 bg-red-900 shadow-lg">1</div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h2 class="flex-none card-title">연장길이 현황</h2>
+                    <div class="flex-1">
+                        <div class="overflow-x-auto">
+                            <table class="table text-center table-sm">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>기준년도</th>
+                                        <th>권역</th>
+                                        <th>목적기반</th>
+                                        <th>목적</th>
+                                        <th>통행량</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover">
+                                        <th>1</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                    <tr class="hover">
+                                        <th>2</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                    <tr class="hover">
+                                        <th>3</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                    <tr class="hover">
+                                        <th>4</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                    <tr class="hover">
+                                        <th>5</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex justify-center mt-4">
+                            <div class="join">
+                                <button class="join-item btn btn-sm">«</button>
+                                <button class="join-item btn btn-sm btn-active">1</button>
+                                <button class="join-item btn btn-sm">2</button>
+                                <button class="join-item btn btn-sm">3</button>
+                                <button class="join-item btn btn-sm">4</button>
+                                <button class="join-item btn btn-sm">5</button>
+                                <button class="join-item btn btn-sm">»</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h2 class="flex-none card-title">연장길이 현황</h2>
+                    <div class="flex-1">
+                        <div class="overflow-x-auto">
+                            <table class="table text-center table-sm">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>기준년도</th>
+                                        <th>권역</th>
+                                        <th>목적기반</th>
+                                        <th>목적</th>
+                                        <th>통행량</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover">
+                                        <th>1</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                    <tr class="hover">
+                                        <th>2</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                    <tr class="hover">
+                                        <th>3</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                    <tr class="hover">
+                                        <th>4</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                    <tr class="hover">
+                                        <th>5</th>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                        <td>내용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="flex justify-center mt-4">
+                            <div class="join">
+                                <button class="join-item btn btn-sm">«</button>
+                                <button class="join-item btn btn-sm btn-active">1</button>
+                                <button class="join-item btn btn-sm">2</button>
+                                <button class="join-item btn btn-sm">3</button>
+                                <button class="join-item btn btn-sm">4</button>
+                                <button class="join-item btn btn-sm">5</button>
+                                <button class="join-item btn btn-sm">»</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section class="grid flex-1 grid-cols-2 gap-8 p-6">
+                <div class="flex flex-col gap-4 bg-red-500">
+                    <h2 class="flex-none card-title">지도</h2>
+                    <div class="flex-1 p-4 bg-red-900 shadow-lg rounded-box">2</div>
+                </div>
+                <div class="flex flex-col gap-4 bg-red-500">
+                    <h2 class="flex-none card-title">지도</h2>
+                    <div class="flex-1 p-4 bg-red-900 shadow-lg rounded-box">2</div>
+                </div>
+            </section> -->
+        </main>
+
+        <ul id="modalWrap"></ul>
+
+        <script type="text/javascript" src="./assets/js/common_ui.js"></script>
+    </body>
+</html>

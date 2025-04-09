@@ -1,0 +1,341 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Pretendard Variable';
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Pretendard/PretendardVariable.woff2') format('woff2-variations');
+}
+
+/*---------------------------------------------------------------------*/
+
+html,
+body,
+input,
+select,
+textarea,
+a,
+button {
+    font-family: "Pretendard Variable", Pretendard, sans-serif;
+}
+
+*, *:focus {
+    appearance: none; /* 모든 요소의 기본 스타일 제거 */
+    outline: none; /* 포커스 시 아웃라인 제거 */
+}
+
+input, button, select, textarea {
+    appearance: none; /* 폼 요소의 브라우저 기본 스타일 제거 */
+}
+
+*:focus {
+    outline: none; /* 포커스 시 아웃라인 제거 */
+    ring: 0; /* 필요한 경우, Tailwind CSS의 ring 크기 제거 (CSS 원시 속성이 아님) */
+}
+
+/*---------------------------------------------------------------------*/
+
+.shadow-up {
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#bottomSheet {
+    transition: transform 0.3s ease-in-out; /* 트랜지션 효과 적용 */
+    transform: translateY(100%); /* 처음 상태에서 보이지 않게 설정 */
+}
+
+.list-circle {
+    list-style-type: circle;
+}
+
+.table-custom :where(thead tr,tbody tr:not(:last-child),tbody tr:first-child:last-child) {
+    border-bottom-width: 0 !important;
+}
+
+.table-custom :where(th,td) {
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+    padding-top: .5rem !important;
+    padding-bottom: .5rem !important;
+    vertical-align: middle;
+    border: 1px solid #cbd5e1;
+}
+
+.table-custom :where(th,td):first-child {
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(230, 127, 49, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 1rem rgba(230, 127, 49, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(230, 127, 495, 0);
+    }
+}
+
+.circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #e67f31;
+    border: 3px solid white;
+    border-radius: 100%;
+    animation: pulse 2s infinite;
+}
+
+.detailBottomSheet {
+    transition: transform 0.3s ease-in-out; /* 트랜지션 효과 적용 */
+    transform: translateY(100%); /* 처음 상태에서 보이지 않게 설정 */
+}
+
+
+.loader {
+    width: 6em;
+    height: 6em;
+}
+
+.loader-ring {
+    animation: ringA 2s linear infinite;
+}
+
+.loader-ring-a {
+    stroke: #cefafe;
+}
+
+.loader-ring-b {
+    animation-name: ringB;
+    stroke: #73d4ff;
+}
+
+.loader-ring-c {
+    animation-name: ringC;
+    stroke: #cefafe;
+}
+
+.loader-ring-d {
+    animation-name: ringD;
+    stroke: #73d4ff;
+}
+
+/* Animations */
+@keyframes ringA {
+    from, 4% {
+        stroke-dasharray: 0 660;
+        stroke-width: 20;
+        stroke-dashoffset: -330;
+    }
+
+    12% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -335;
+    }
+
+    32% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -595;
+    }
+
+    40%, 54% {
+        stroke-dasharray: 0 660;
+        stroke-width: 20;
+        stroke-dashoffset: -660;
+    }
+
+    62% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -665;
+    }
+
+    82% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -925;
+    }
+
+    90%, to {
+        stroke-dasharray: 0 660;
+        stroke-width: 20;
+        stroke-dashoffset: -990;
+    }
+}
+
+@keyframes ringB {
+    from, 12% {
+        stroke-dasharray: 0 220;
+        stroke-width: 20;
+        stroke-dashoffset: -110;
+    }
+
+    20% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -115;
+    }
+
+    40% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -195;
+    }
+
+    48%, 62% {
+        stroke-dasharray: 0 220;
+        stroke-width: 20;
+        stroke-dashoffset: -220;
+    }
+
+    70% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -225;
+    }
+
+    90% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -305;
+    }
+
+    98%, to {
+        stroke-dasharray: 0 220;
+        stroke-width: 20;
+        stroke-dashoffset: -330;
+    }
+}
+
+@keyframes ringC {
+    from {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: 0;
+    }
+
+    8% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -5;
+    }
+
+    28% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -175;
+    }
+
+    36%, 58% {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -220;
+    }
+
+    66% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -225;
+    }
+
+    86% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -395;
+    }
+
+    94%, to {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -440;
+    }
+}
+
+@keyframes ringD {
+    from, 8% {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: 0;
+    }
+
+    16% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -5;
+    }
+
+    36% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -175;
+    }
+
+    44%, 50% {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -220;
+    }
+
+    58% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -225;
+    }
+
+    78% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -395;
+    }
+
+    86%, to {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -440;
+    }
+}
+
+/*-----------------------------------------------------*/
+
+.transition-effect {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.transition-effect:hover {
+    background-color: #00b8db;
+    color: white;
+}
+
+.divIcon-CurrentLoction {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.divIcon-ShelterLoction {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* 작은 클러스터 (10개 이하) */
+.marker-cluster-small div {
+    background-color: blue !important;
+    border: 2px solid white;
+}
+
+/* 중간 클러스터 (10~99개) */
+.marker-cluster-medium div {
+    background-color: orange !important;
+    border: 2px solid white;
+}
+
+/* 큰 클러스터 (100개 이상) */
+.marker-cluster-large div {
+    background-color: red !important;
+    border: 2px solid white;
+}

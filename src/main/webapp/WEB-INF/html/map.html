@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>광역교통 데이터 플랫폼</title>
+        <link rel="stylesheet" href="./assets/daisyui.css" />
+        <link rel="stylesheet" href="./assets/common.css" />
+        <script src="./assets/tailwind.js"></script>
+    </head>
+    <body data-theme="light" class="flex flex-col h-screen">
+        <header class="sticky top-0 z-20 flex-none bg-base-100 drop-shadow">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <a href="./index.html" class="text-xl normal-case btn btn-ghost no-animation">
+                        <img src="./assets/images/logo.svg" alt="logo" loading="lazy" class="w-44" />
+                    </a>
+                </div>
+                <div class="hidden navbar-center lg:flex">
+                    <ul class="px-1 menu menu-horizontal">
+                        <li><a href="./index.html">2차 기본계획</a></li>
+                        <li><a href="./index.html">4차 기본계획</a></li>
+                        <li><a href="./index.html">광역교통시설 및 서비스</a></li>
+                        <li><a href="./index.html">광역통행</a></li>
+                        <li><a href="./index.html">사회경제지표</a></li>
+                        <li><a href="./map.html" class="active">광역교통지도</a></li>
+                        <li><a href="./info.html">알림마당</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <button onclick="logOutModal.showModal()" class="btn btn-primary btn-sm">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex flex-1">
+            <section class="flex w-72 bg-base-200">
+                <ul class="flex-none p-0 menu bg-base-100">
+                    <li>
+                        <a class="flex flex-col py-3 rounded-none active">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 7a1 1 0 0 1-1 1v3.5c0 .818-.393 1.544-1 2v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V14H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a2.496 2.496 0 0 1-1-2V8a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1V2.64C1 1.452 1.845.408 3.064.268A43.608 43.608 0 0 1 8 0c2.1 0 3.792.136 4.936.268C14.155.408 15 1.452 15 2.64V4a1 1 0 0 1 1 1v2ZM3.552 3.22A43.306 43.306 0 0 1 8 3c1.837 0 3.353.107 4.448.22a.5.5 0 0 0 .104-.994A44.304 44.304 0 0 0 8 2c-1.876 0-3.426.109-4.552.226a.5.5 0 1 0 .104.994ZM8 4c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9c1.876 0 3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44.304 44.304 0 0 0 8 4Zm-3 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm8 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-7 0a1 1 0 0 0 1 1h2a1 1 0 1 0 0-2H7a1 1 0 0 0-1 1Z"
+                                />
+                            </svg>
+                            <p>광역버스</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex flex-col py-3 rounded-none">
+                            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5" aria-hidden="true">
+                                <path
+                                    clip-rule="evenodd"
+                                    fill-rule="evenodd"
+                                    d="M1.5 6.375c0-1.036.84-1.875 1.875-1.875h17.25c1.035 0 1.875.84 1.875 1.875v3.026a.75.75 0 01-.375.65 2.249 2.249 0 000 3.898.75.75 0 01.375.65v3.026c0 1.035-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 17.625v-3.026a.75.75 0 01.374-.65 2.249 2.249 0 000-3.898.75.75 0 01-.374-.65V6.375zm15-1.125a.75.75 0 01.75.75v.75a.75.75 0 01-1.5 0V6a.75.75 0 01.75-.75zm.75 4.5a.75.75 0 00-1.5 0v.75a.75.75 0 001.5 0v-.75zm-.75 3a.75.75 0 01.75.75v.75a.75.75 0 01-1.5 0v-.75a.75.75 0 01.75-.75zm.75 4.5a.75.75 0 00-1.5 0V18a.75.75 0 001.5 0v-.75zM6 12a.75.75 0 01.75-.75H12a.75.75 0 010 1.5H6.75A.75.75 0 016 12zm.75 2.25a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
+                                ></path>
+                            </svg>
+                            <p>s-BRT</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex flex-col py-3 rounded-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 0a.5.5 0 0 0 0 1h1v1.011c-1.525.064-3.346.394-4.588.655C1.775 2.904 1 3.915 1 5.055V13.5A2.5 2.5 0 0 0 3.5 16h9a2.5 2.5 0 0 0 2.5-2.5V5.055c0-1.14-.775-2.15-1.912-2.39-1.242-.26-3.063-.59-4.588-.654V1h1a.5.5 0 0 0 0-1h-3ZM8 4c1.136 0 2.645.2 3.604.346.825.126 1.356.9 1.244 1.697-.022.16-.046.335-.07.522C12.643 7.596 12.5 8.949 12.5 10c0 .428.024.933.062 1.464.066.93.174 1.92.266 2.682.042.34.08.634.109.854h-1.01a62.703 62.703 0 0 1-.327-3H9.354c-.36 0-.704-.143-.958-.396a.353.353 0 0 0-.25-.104h-.292a.353.353 0 0 0-.25.104 1.354 1.354 0 0 1-.958.396H4.4a62.692 62.692 0 0 1-.328 3H3.064c.029-.22.067-.514.108-.854.092-.761.2-1.752.266-2.682.038-.531.062-1.036.062-1.464 0-1.051-.143-2.404-.278-3.435a51.762 51.762 0 0 0-.07-.522c-.112-.798.42-1.571 1.244-1.697C5.356 4.199 6.864 4 8 4Zm-1.354 7H4.47c.019-.353.03-.692.03-1 0-.927-.104-2.051-.216-3h7.432c-.112.949-.216 2.073-.216 3 0 .308.011.647.03 1H9.354a.353.353 0 0 1-.25-.104 1.354 1.354 0 0 0-.958-.396h-.292c-.36 0-.704.143-.958.396a.353.353 0 0 1-.25.104Zm5.199-5h-7.69l-.013-.096a.497.497 0 0 1 .405-.57C5.505 5.188 6.947 5 8 5s2.495.188 3.453.334a.497.497 0 0 1 .405.57L11.845 6ZM6 13.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm4 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Z"
+                                />
+                            </svg>
+                            <p>광역BRT</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex flex-col py-3 rounded-none">
+                            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="w-5" aria-hidden="true">
+                                <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                                <path
+                                    d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"
+                                ></path>
+                            </svg>
+                            <p>광역도로</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex flex-col py-3 rounded-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5" viewBox="0 0 16 16">
+                                <path
+                                    d="M10.621.515C8.647.02 7.353.02 5.38.515c-.924.23-1.982.766-2.78 1.22C1.566 2.322 1 3.432 1 4.582V13.5A2.5 2.5 0 0 0 3.5 16h9a2.5 2.5 0 0 0 2.5-2.5V4.583c0-1.15-.565-2.26-1.6-2.849-.797-.453-1.855-.988-2.779-1.22ZM6.5 2h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm-2 2h7A1.5 1.5 0 0 1 13 5.5v2A1.5 1.5 0 0 1 11.5 9h-7A1.5 1.5 0 0 1 3 7.5v-2A1.5 1.5 0 0 1 4.5 4Zm.5 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm0 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3-1a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM4 5.5a.5.5 0 0 1 .5-.5h3v3h-3a.5.5 0 0 1-.5-.5v-2ZM8.5 8V5h3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-3Z"
+                                />
+                            </svg>
+                            <p>광역철도</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex flex-col py-3 rounded-none">
+                            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="w-5" aria-hidden="true">
+                                <path
+                                    clip-rule="evenodd"
+                                    fill-rule="evenodd"
+                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                ></path>
+                            </svg>
+                            <p>환승센터</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="flex-1 p-3">
+                    <div class="form-control">
+                        <form class="input-group">
+                            <input type="text" placeholder="노선명을 입력하세요." class="w-full input input-sm input-bordered" required />
+                            <button class="btn btn-sm btn-neutral btn-square" onClick="searchRouteName()">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <ul class="mt-3 text-sm divide-y shadow rounded-box bg-base-100 divide-base-300">
+                        <li class="p-3 cursor-pointer">
+                            <section>
+                                <div class="flex items-center gap-2">
+                                    <p class="badge badge-sm badge-error">광역</p>
+                                    <p>M7111</p>
+                                </div>
+                                <div class="flex flex-wrap items-center mt-2 mb-3 text-xs gap-x-2 gap-y-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-3" viewBox="0 0 16 16">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"
+                                        />
+                                    </svg>
+                                    <div>
+                                        <p>강남역 1번출구</p>
+                                        <p>강남역 1번출구</p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="flex flex-col gap-1 p-2 text-xs rounded-md bg-base-200">
+                                <div class="flex gap-2">
+                                    <p>첫차: <span>05:00</span></p>
+                                    <p>막차: <span>05:00</span></p>
+                                </div>
+                                <p>배차간격: <span> 10~20</span>분</p>
+                                <p class="pt-1.5 mt-1 border-t border-base-300">총 <strong>20</strong>대 운영</p>
+                            </section>
+                        </li>
+                        <li class="p-3 cursor-pointer">
+                            <section>
+                                <div class="flex items-center gap-2">
+                                    <p class="badge badge-sm badge-primary">지선</p>
+                                    <p>M7111</p>
+                                </div>
+                                <div class="flex flex-wrap items-center mt-2 mb-3 text-xs gap-x-2 gap-y-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-3" viewBox="0 0 16 16">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"
+                                        />
+                                    </svg>
+                                    <div>
+                                        <p>강남역 1번출구</p>
+                                        <p>강남역 1번출구</p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="flex flex-col gap-1 p-2 text-xs rounded-md bg-base-200">
+                                <div class="flex gap-2">
+                                    <p>첫차: <span>05:00</span></p>
+                                    <p>막차: <span>05:00</span></p>
+                                </div>
+                                <p>배차간격: <span> 10~20</span>분</p>
+                                <p class="pt-1.5 mt-1 border-t border-base-300">총 <strong>20</strong>대 운영</p>
+                            </section>
+                        </li>
+                        <li class="p-3 cursor-pointer">
+                            <section>
+                                <div class="flex items-center gap-2">
+                                    <p class="badge badge-sm badge-accent">순환</p>
+                                    <p>M7111</p>
+                                </div>
+                                <div class="flex flex-wrap items-center mt-2 mb-3 text-xs gap-x-2 gap-y-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-3" viewBox="0 0 16 16">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"
+                                        />
+                                    </svg>
+                                    <div>
+                                        <p>강남역 1번출구</p>
+                                        <p>강남역 1번출구</p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="flex flex-col gap-1 p-2 text-xs rounded-md bg-base-200">
+                                <div class="flex gap-2">
+                                    <p>첫차: <span>05:00</span></p>
+                                    <p>막차: <span>05:00</span></p>
+                                </div>
+                                <p>배차간격: <span> 10~20</span>분</p>
+                                <p class="pt-1.5 mt-1 border-t border-base-300">총 <strong>20</strong>대 운영</p>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="relative flex-1 bg-green-500">
+                <div class="absolute z-10 text-sm top-3 left-3 bg-base-100 rounded-box">
+                    <section class="p-3 pb-0">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <p class="badge badge-sm badge-error">광역</p>
+                                <p>M7111</p>
+                            </div>
+                            <button for="my-modal-3" class="btn btn-sm btn-circle btn-ghost">✕</button>
+                        </div>
+                        <div class="flex flex-wrap items-center mt-2 mb-3 text-xs gap-x-2 gap-y-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-3" viewBox="0 0 16 16">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"
+                                />
+                            </svg>
+                            <div>
+                                <p>강남역 1번출구</p>
+                                <p>강남역 1번출구</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="flex flex-col gap-1 p-3 py-0 text-xs">
+                        <div class="flex gap-2">
+                            <p>첫차: <span>05:00</span></p>
+                            <p>막차: <span>05:00</span></p>
+                        </div>
+                        <p>배차간격: <span> 10~20</span>분</p>
+                        <p class="pt-1.5 mt-1 border-t border-base-300">총 <strong>20</strong>대 운영</p>
+                    </section>
+                    <section class="flex items-center justify-between px-3 py-2 my-2 text-xs bg-base-200">
+                        <p>경기도 제공</p>
+                        <div class="flex items-center gap-1">
+                            <p>3/13</p>
+                            <div class="flex items-center gap-2">
+                                <p>16:09</p>
+                                <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-3 cursor-pointer" aria-hidden="true">
+                                    <path
+                                        clip-rule="evenodd"
+                                        fill-rule="evenodd"
+                                        d="M4.755 10.059a7.5 7.5 0 0112.548-3.364l1.903 1.903h-3.183a.75.75 0 100 1.5h4.992a.75.75 0 00.75-.75V4.356a.75.75 0 00-1.5 0v3.18l-1.9-1.9A9 9 0 003.306 9.67a.75.75 0 101.45.388zm15.408 3.352a.75.75 0 00-.919.53 7.5 7.5 0 01-12.548 3.364l-1.902-1.903h3.183a.75.75 0 000-1.5H2.984a.75.75 0 00-.75.75v4.992a.75.75 0 001.5 0v-3.18l1.9 1.9a9 9 0 0015.059-4.035.75.75 0 00-.53-.918z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </section>
+                    <ol class="relative mt-4 border-l ml-7 border-base-300">
+                        <li class="mb-6 ml-6 text-xs">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-base-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 7a1 1 0 0 1-1 1v3.5c0 .818-.393 1.544-1 2v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V14H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a2.496 2.496 0 0 1-1-2V8a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1V2.64C1 1.452 1.845.408 3.064.268A43.608 43.608 0 0 1 8 0c2.1 0 3.792.136 4.936.268C14.155.408 15 1.452 15 2.64V4a1 1 0 0 1 1 1v2ZM3.552 3.22A43.306 43.306 0 0 1 8 3c1.837 0 3.353.107 4.448.22a.5.5 0 0 0 .104-.994A44.304 44.304 0 0 0 8 2c-1.876 0-3.426.109-4.552.226a.5.5 0 1 0 .104.994ZM8 4c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9c1.876 0 3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44.304 44.304 0 0 0 8 4Zm-3 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm8 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-7 0a1 1 0 0 0 1 1h2a1 1 0 1 0 0-2H7a1 1 0 0 0-1 1Z"
+                                    />
+                                </svg>
+                            </span>
+                            <h3 class="flex items-center mb-1 font-semibold text-gray-900">산내마을6,8단지 <span class="ml-3 mr-4 badge badge-sm badge-neutral">Latest</span></h3>
+                            <p class="pr-4 font-normal text-gray-500">내용</p>
+                        </li>
+                        <li class="mb-6 ml-6 text-xs">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 7a1 1 0 0 1-1 1v3.5c0 .818-.393 1.544-1 2v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V14H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a2.496 2.496 0 0 1-1-2V8a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1V2.64C1 1.452 1.845.408 3.064.268A43.608 43.608 0 0 1 8 0c2.1 0 3.792.136 4.936.268C14.155.408 15 1.452 15 2.64V4a1 1 0 0 1 1 1v2ZM3.552 3.22A43.306 43.306 0 0 1 8 3c1.837 0 3.353.107 4.448.22a.5.5 0 0 0 .104-.994A44.304 44.304 0 0 0 8 2c-1.876 0-3.426.109-4.552.226a.5.5 0 1 0 .104.994ZM8 4c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9c1.876 0 3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44.304 44.304 0 0 0 8 4Zm-3 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm8 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-7 0a1 1 0 0 0 1 1h2a1 1 0 1 0 0-2H7a1 1 0 0 0-1 1Z"
+                                    />
+                                </svg>
+                            </span>
+                            <h3 class="flex items-center mb-1 font-semibold text-gray-900">산내마을6,8단지 <span class="ml-3 mr-4 badge badge-sm badge-neutral">Latest</span></h3>
+                            <p class="pr-4 font-normal text-gray-500">내용</p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="absolute z-10 text-sm top-3 left-60 bg-base-100 rounded-box">
+                    <section class="p-3 pb-2">
+                        <div class="flex items-center justify-between mb-2">
+                            <p>M7111</p>
+                            <button for="my-modal-3" class="btn btn-sm btn-circle btn-ghost">✕</button>
+                        </div>
+                        <p class="text-xs">31671 | 가람마을2,8단지(중) 방면</p>
+                    </section>
+                    <div class="mt-2 mb-4 overflow-x-auto">
+                        <table class="table text-center table-xs lg:table-sm">
+                            <thead>
+                                <tr>
+                                    <th>승차인원</th>
+                                    <th>하차인원</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1871</td>
+                                    <td>650</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <section class="flex items-center justify-between px-3 py-2 my-2 text-xs bg-base-200">
+                        <p>경유노선정보</p>
+                        <div class="flex items-center gap-1">
+                            <p>3/13</p>
+                            <div class="flex items-center gap-2">
+                                <p>16:09</p>
+                                <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-3 cursor-pointer" aria-hidden="true">
+                                    <path
+                                        clip-rule="evenodd"
+                                        fill-rule="evenodd"
+                                        d="M4.755 10.059a7.5 7.5 0 0112.548-3.364l1.903 1.903h-3.183a.75.75 0 100 1.5h4.992a.75.75 0 00.75-.75V4.356a.75.75 0 00-1.5 0v3.18l-1.9-1.9A9 9 0 003.306 9.67a.75.75 0 101.45.388zm15.408 3.352a.75.75 0 00-.919.53 7.5 7.5 0 01-12.548 3.364l-1.902-1.903h3.183a.75.75 0 000-1.5H2.984a.75.75 0 00-.75.75v4.992a.75.75 0 001.5 0v-3.18l1.9 1.9a9 9 0 0015.059-4.035.75.75 0 00-.53-.918z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="divide-y divide-base-200">
+                        <div class="flex gap-2 p-3 pt-1 text-xs">
+                            <p class="badge badge-sm badge-error">광역</p>
+                            <div>
+                                <p class="font-bold">773</p>
+                                <p>해송마을4단지 방향</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 p-3 text-xs">
+                            <p class="badge badge-sm badge-error">광역</p>
+                            <div>
+                                <p class="font-bold">773</p>
+                                <p>해송마을4단지 방향</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 p-3 text-xs">
+                            <p class="badge badge-sm badge-error">광역</p>
+                            <div>
+                                <p class="font-bold">773</p>
+                                <p>해송마을4단지 방향</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+
+        <ul id="modalWrap"></ul>
+
+        <script type="text/javascript" src="./assets/js/common_ui.js"></script>
+    </body>
+</html>

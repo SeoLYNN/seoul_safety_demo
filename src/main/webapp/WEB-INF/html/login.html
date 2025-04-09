@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>광역교통 데이터 플랫폼</title>
+        <link rel="stylesheet" href="./assets/daisyui.css" />
+        <link rel="stylesheet" href="./assets/common.css" />
+        <script src="./assets/tailwind.js"></script>
+    </head>
+    <body data-theme="light">
+        <header class="sticky top-0 z-20 bg-base-100">
+            <div class="container mx-auto navbar">
+                <div class="navbar-start">
+                    <a class="text-xl normal-case btn btn-ghost no-animation">
+                        <img src="./assets/images/logo.svg" alt="logo" loading="lazy" class="w-44" />
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <button onclick="my_modal_1.showModal()" class="btn btn-sm btn-neutral">로그인</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="flex-grow w-full bg-cover bg-bottom bg-no-repeat bg-[url('./assets/images/mainBg.jpg')]">
+                <div class="container mx-auto flex flex-col h-[500px] justify-center text-base-100">
+                    <h2 class="text-6xl font-semibold shadow-2xl drop-shadow-md">광역교통플랫폼</h2>
+                    <ul class="mt-6 text-base shadow-2xl drop-shadow-md">
+                        <li>광역교통 정책개발과 효과적 시행을 위해</li>
+                        <li>광역교통에 관한 각종 데이터를 체계적으로 수집하여</li>
+                        <li>활용할 수 있도록 마련 된 지도 기반 디지털 플랫폼</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative w-full h-60">
+                <div class="container absolute grid grid-cols-3 gap-4 transform -translate-x-1/2 bottom-14 left-1/2">
+                    <section class="block p-5 bg-white border border-gray-200 drop-shadow-md rounded-xl">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-[15px] text-[#00aeee] font-bold">공지사항</h2>
+                            <div class="p-1 rounded-lg cursor-pointer hover:bg-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#00aeee]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="{2}" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <h4 class="my-[20px] text-[15px] font-bold">[워크샵 개최] 교통DB협의회 워크샵 개최</h4>
+                                <p class="text-[14px] min-h-[150px] text-gray-400">
+                                    건설교통부와 교통연구원에서는 교통정책 계획, 수립에 필요한 기초자료 및 통계를 국가차원에서 종합적으로 조사, 분석 및 관리하는 국가교통DB구축사업 을 '00년부터 추진
+                                    중에 있습니다.'
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-sm">2023.03.03</h4>
+                                <div class="flex">
+                                    <button
+                                        type="button"
+                                        class="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                    >
+                                        <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                                                clipRule="evenodd"
+                                            ></path>
+                                        </svg>
+                                        이전
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                    >
+                                        다음
+                                        <svg aria-hidden="true" class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                clipRule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="block p-5 bg-white border border-gray-200 drop-shadow-md rounded-xl">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-[15px] text-[#00aeee] font-bold">정책자료</h2>
+                            <div class="p-1 rounded-lg cursor-pointer hover:bg-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#00aeee]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="{2}" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <h4 class="my-[20px] text-[15px] font-bold">제2차 대도시권 광역교통 기본계획 (2021~2040)발간</h4>
+                                <div class="text-gray-400 min-h-[150px] text-sm flex gap-6">
+                                    <div class="w-60">
+                                        <img src="./assets/images/sampleImg.jpg" alt="" class="w-full" />
+                                    </div>
+                                    <p>
+                                        건설교통부와 교통연구원에서는 교통정책 계획, 수립에 필요한 기초자료 및 통계를 국가차원에서 종합적으로 조사, 분석 및 관리하는 국가교통DB구축사업 을 '00년부터
+                                        추진 중에 있습니다.'
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-sm">2023.03.03</h4>
+                                <div class="flex">
+                                    <button
+                                        type="button"
+                                        class="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                    >
+                                        <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                                                clipRule="evenodd"
+                                            ></path>
+                                        </svg>
+                                        이전
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                    >
+                                        다음
+                                        <svg aria-hidden="true" class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                clipRule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="block p-5 bg-white border border-gray-200 drop-shadow-md rounded-xl">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-[15px] text-[#00aeee] font-bold">시스템 관련 공지사항</h2>
+                            <div class="p-1 rounded-lg cursor-pointer hover:bg-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#00aeee]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="{2}" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <h4 class="my-[20px] text-[15px] font-bold">[워크샵 개최] 교통DB협의회 워크샵 개최</h4>
+                                <p class="text-[14px] min-h-[150px] text-gray-400">
+                                    플랫폼 유지보수를 위한 시스템 운영중지를 아래와 같이 공지합니다.
+                                    <br />
+                                    <br />
+                                    -아 래- <br />
+                                    1. 일시: 2022년 8월 21일 18:00 ~ 24:00
+                                    <br />
+                                    2. 사유 : 시스템 정기점검
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-sm">2023.03.03</h4>
+                                <div class="flex">
+                                    <button
+                                        type="button"
+                                        class="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                    >
+                                        <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                                                clipRule="evenodd"
+                                            ></path>
+                                        </svg>
+                                        이전
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                    >
+                                        다음
+                                        <svg aria-hidden="true" class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                clipRule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="relative bottom-0 w-full">
+            <section class="text-white bg-gray-800">
+                <div class="container flex flex-wrap gap-4 px-6 py-2.5 mx-auto text-xs md:text-sm md:px-0">
+                    <a href="#" class="hover:underline"> 개인정보처리방침 </a>
+                    <a href="#" class="hover:underline"> 이용약관 </a>
+                </div>
+            </section>
+
+            <section class="px-6 py-6 md:px-0 bg-[#F3F4F6]">
+                <div class="container flex flex-wrap items-center gap-8 mx-auto md:gap-16">
+                    <div class="w-32 md:w-44">
+                        <img src="./assets/images/fLogo.svg" alt="" class="w-full" />
+                    </div>
+                    <div class="flex flex-col gap-2 text-xs md:text-sm">
+                        <p>(우)30147 세종특별자치시 시청대로 370 세종국책연구단지 과학인프라동(B) TEL. 044-211-3114FAX. 044-211-3222</p>
+                        <p>&copy; Korea transport institute all rights reserved.</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+        <dialog id="my_modal_1" class="modal">
+            <form method="dialog" class="modal-box" onsubmit="location.href='./index.html'">
+                <h3 class="text-lg font-bold">광역교통플랫폼</h3>
+                <div class="mt-4">
+                    <div class="form-control">
+                        <label for="mb_id" class="label">
+                            <span class="label-text">아이디</span>
+                        </label>
+                        <input type="text" id="mb_id" placeholder="아이디를 입력 해주세요" class="input input-bordered" />
+                    </div>
+                    <div class="form-control">
+                        <label for="mb_pw" class="label">
+                            <span class="label-text">비밀번호</span>
+                        </label>
+                        <input type="password" id="mb_pw" placeholder="비밀번호를 입력 해주세요" class="input input-bordered" />
+                    </div>
+                    <div class="mt-6 form-control">
+                        <button class="btn btn-primary">로그인</button>
+                    </div>
+                </div>
+            </form>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
+    </body>
+</html>

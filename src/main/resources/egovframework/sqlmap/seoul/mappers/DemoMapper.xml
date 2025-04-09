@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.seoul.mapper.DemoMapper">
+
+    <select id="getShelterInfo" resultType="string">
+        SELECT	row_to_json(fc) As rjson
+        FROM(
+                SELECT	'FeatureCollection' As type,
+                        array_to_json(array_agg(f)) As features
+                FROM(
+                        SELECT ST_AsGeoJSON(G.*)::json as f
+                        FROM(
+                                SELECT	ID
+                                        , COALESCE(ADDRESS, '-') AS ROAD_ADDRES
+                                        , ADDRESS1 AS LCTN_ADDRES
+                                        , OPER_STTS
+                                        , FCLT_NM
+                                        , FCLT_SE
+                                        , ROAD_NM_AD
+                                        , LCTN_ADDR
+                                        , FCLT_PSTN
+                                        , ACTC_NOPE
+                                        , GEOM
+                                FROM gis.SEOUL_EVACU_FACY SEF
+                                WHERE 1=1
+                                  <if test='dist != "all"'>
+                                          AND ST_DWithin(
+                                                ST_SetSRID(ST_MakePoint(#{lng}::float8, #{lat}::float8), 4326)::GEOGRAPHY
+                                                , geom
+                                                , #{dist}::NUMERIC
+                                        )
+                                  </if>
+                        ) G
+                ) F
+        ) FC
+    </select>
+
+    <select id="getSdGeomData" resultType="string">
+        SELECT	row_to_json(fc) As rjson
+        FROM(
+        		SELECT	'FeatureCollection' As type,
+        				array_to_json(array_agg(f)) As features
+        		FROM(
+        				SELECT ST_AsGeoJSON(G.*)::json as f
+        				FROM(
+        					SELECT geom FROM GIS.BJ_SD_23 WHERE SD_NM = '서울특별시'
+        				) G
+        		) F
+        ) FC
+    </select>
+
+</mapper>
