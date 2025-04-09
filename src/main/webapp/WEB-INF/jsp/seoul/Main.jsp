@@ -86,6 +86,15 @@
 			</label>
 		</div>
 
+		<div class="radio-inputs select-none absolute top-16 left-4 flex items-center gap-1 bg-white px-2 py-1.5 md:py-2 rounded-full shadow-lg shadow-black/30 text-slate-700 text-xs md:text-sm">
+			<label class="cursor-pointer">
+				<input type="text" name="versionText" class="sr-only peer" />
+				<span class="transition-effect peer-checked:bg-cyan-600 peer-checked:text-white bg-white px-2 md:px-3 py-1 rounded-full whitespace-nowrap flex items-center gap-0.5">
+					Ver 0.1
+				</span>
+			</label>
+		</div>
+
 
 		<div>
 			<!--내 위치 버튼-->

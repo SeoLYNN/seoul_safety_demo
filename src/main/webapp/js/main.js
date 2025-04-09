@@ -319,7 +319,7 @@ const moveToTestPosition = () => {
  * */
 const findRouteForKakaoMap = () => {
 
-    let address = selectedMarkerData.properties.road_addres;
+    let address = selectedMarkerData.properties.road_addres === '-' ? selectedMarkerData.properties.lctn_addres : selectedMarkerData.properties.road_addres;
 
     let lat = selectedMarkerData.geometry.coordinates[0]
     let lon = selectedMarkerData.geometry.coordinates[1]
